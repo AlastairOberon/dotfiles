@@ -1,0 +1,114 @@
+configuration {
+    modi: "drun,window,run";
+    show-icons: true;
+    icon-theme: "Papirus";
+    terminal: "ghostty";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: " Apps ";
+    sidebar-mode: true;
+}
+
+@theme "/dev/null"
+
+* {
+    bg-col:  #1e1e2e;
+    border-col: #f38ba8; /* This is bright red/pink to confirm it works */
+    selected-col: #313244;
+    fg-col: #cdd6f4;
+    
+    height: 800;
+    width: 1400;
+    font: "JetBrains Mono 14";
+}
+
+window {
+    border: 1px;
+    border-color: #cba6f7;
+    background-color: #1e1e2e;
+    border-radius: 10px;
+}
+
+mainbox {
+    background-color: #11111b;
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: #11111b;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+prompt {
+    background-color: #cba6f7;
+    padding: 6px;
+    text-color: #11111b;
+    border-radius: 3px;
+    margin: 20px 0px 0px 20px;
+}
+
+entry {
+    padding: 6px;
+    margin: 20px 0px 0px 10px;
+    text-color: #cdd6f4;
+    background-color: #1e1e2e;
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 0px 0px 0px;
+    margin: 10px 0px 0px 20px;
+    columns: 2;
+    background-color: #11111b;
+}
+
+element normal.normal {
+    padding: 15px;
+    background-color: #1e1e2e;
+    text-color: #cdd6f4;
+}
+
+element alternate.normal {
+    padding: 15px;
+    background-color: #181825;
+    text-color: #cdd6f4;
+}
+
+element selected {
+    background-color: #cba6f7;
+    text-color: #11111b;
+}
+element-text {
+    padding: 15px;
+    background-color: transparent;
+    text-color:       inherit;
+}
+
+element-icon {
+    padding: 5px;
+    background-color: transparent;
+    text-color:       inherit;
+    size: 2.5ch;
+}
+mode-switcher {
+    spacing: 0;
+    margin: 5px 10px;
+    background-color: transparent;
+}
+
+button {
+    padding: 10px;
+    background-color: #1e1e2e;
+    text-color: #cdd6f4;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+button selected {
+  background-color: #cba6f7;
+  text-color: #11111b;
+  border-radius: 5px;
+}

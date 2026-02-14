@@ -1,0 +1,185 @@
+format = """
+[](lavender)\
+$hostname\
+[](fg:lavender bg:crust)\
+$username\
+[](fg:crust bg:blue)\
+$time\
+[](blue)\
+$line_break\
+[](mauve)\
+$directory\
+[](fg:mauve bg:maroon)\
+$git_branch\
+[](fg:maroon)\
+$git_status\
+$fill\
+[](lavender)\
+$c\
+$cpp\
+$golang\
+$elixir\
+$elm\
+$gradle\
+$haskell\
+$java\
+$julia\
+$nim\
+$rust\
+$scala\
+$lua\
+$python\
+$nodejs\
+$docker_context\
+$jobs\
+$cmd_duration\
+[ ](lavender)\
+$line_break\
+$character"""
+
+palette = "catppuccin_mocha"
+
+[username]
+show_always = false
+style_user = "bg:crust fg:lavender"
+style_root = "bg:crust fg:lavender"
+format = '[ $user ]($style)'
+disabled = false
+
+[hostname]
+ssh_only = true
+style = 'bg:lavender fg:crust'
+format = '[ $ssh_symbol$hostname ]($style)'
+disabled = false
+
+[fill]
+style = 'lavender'
+symbol = '+--'
+
+[directory]
+style = 'bg:mauve fg:base'
+format = '[$path]($style)[$read_only]($read_only_style)'
+truncation_length = 3
+truncation_symbol = '.../'
+
+[git_branch]
+symbol = ""
+style = 'bg:maroon fg:base'
+format = '[ $symbol $branch(:$remote_branch)]($style)'
+
+[git_status]
+style = 'maroon'
+
+[python]
+style = "bg:lavender fg:base"
+symbol = ''
+format = '[${symbol} ${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+pyenv_version_name = true
+pyenv_prefix = ""
+
+[time]
+style = "bg:blue fg:base"
+disabled = false
+format = '[ $time ]($style)'
+time_format = '%R'
+
+[cmd_duration]
+style = "bg:lavender fg:base"
+format = '[took $duration]($style)'
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
+[c]
+symbol = " "
+style = "bg:lavender fg:base"
+format = '[ $symbol ($version) ]($style)'
+
+[cpp]
+symbol = " "
+style = "bg:lavender fg:base"
+format = '[ $symbol ($version) ]($style)'
+
+[docker_context]
+symbol = " "
+style = "bg:lavender fg:base"
+format = '[ $symbol $context ]($style)'
+
+[elixir]
+symbol = " "
+style = "bg:lavender fg:base"
+format = '[ $symbol ($version) ]($style)'
+
+[elm]
+symbol = " "
+style = "bg:lavender fg:base"
+format = '[ $symbol ($version) ]($style)'
+
+[golang]
+symbol = " "
+style = "bg:lavender fg:base"
+format = '[ $symbol ($version) ]($style)'
+
+[gradle]
+style = "bg:lavender fg:base"
+format = '[ $symbol ($version) ]($style)'
+
+[haskell]
+symbol = " "
+style = "bg:lavender fg:base"
+format = '[ $symbol ($version) ]($style)'
+
+[java]
+symbol = " "
+style = "bg:lavender fg:base"
+format = '[ $symbol ($version) ]($style)'
+
+[julia]
+symbol = " "
+style = "bg:lavender fg:base"
+format = '[ $symbol ($version) ]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:lavender fg:base"
+format = '[ $symbol ($version) ]($style)'
+
+[nim]
+symbol = "󰆥 "
+style = "bg:lavender fg:base"
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = ""
+style = "bg:lavender fg:base"
+format = '[ $symbol ($version) ]($style)'
+
+[scala]
+symbol = " "
+style = "bg:lavender fg:base"
+format = '[ $symbol ($version) ]($style)'

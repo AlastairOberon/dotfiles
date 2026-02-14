@@ -1,0 +1,4 @@
+[[manager.prepend_keymap]]
+on   = [ "D" ]
+run  = '''shell 'dragon -x "$@"' --confirm'''
+desc = "Drag and drop"
