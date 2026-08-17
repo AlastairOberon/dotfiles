@@ -12,13 +12,11 @@ configuration {
 }
 
 @theme "/dev/null"
+/* --- THE FIX: Import the dynamic Pywal colors! --- */
+@import "~/.cache/wal/colors-rofi.rasi"
 
 * {
-    bg-col:  #1e1e2e;
-    border-col: #f38ba8; /* This is bright red/pink to confirm it works */
-    selected-col: #313244;
-    fg-col: #cdd6f4;
-    
+    /* Removed the hardcoded colors from here, they are now handled by the import */
     height: 800;
     width: 1400;
     font: "JetBrains Mono 14";
@@ -26,26 +24,26 @@ configuration {
 
 window {
     border: 1px;
-    border-color: #cba6f7;
-    background-color: #1e1e2e;
+    border-color: @main-col; 
+    background-color: @bg-col;
     border-radius: 10px;
 }
 
 mainbox {
-    background-color: #11111b;
+    background-color: @bg-col-dark;
 }
 
 inputbar {
     children: [prompt,entry];
-    background-color: #11111b;
+    background-color: @bg-col-dark;
     border-radius: 5px;
     padding: 2px;
 }
 
 prompt {
-    background-color: #cba6f7;
+    background-color: @main-col;
     padding: 6px;
-    text-color: #11111b;
+    text-color: @bg-col-dark;
     border-radius: 3px;
     margin: 20px 0px 0px 20px;
 }
@@ -53,8 +51,8 @@ prompt {
 entry {
     padding: 6px;
     margin: 20px 0px 0px 10px;
-    text-color: #cdd6f4;
-    background-color: #1e1e2e;
+    text-color: @fg-col;
+    background-color: @bg-col;
 }
 
 listview {
@@ -62,37 +60,39 @@ listview {
     padding: 0px 0px 0px;
     margin: 10px 0px 0px 20px;
     columns: 2;
-    background-color: #11111b;
+    background-color: @bg-col-dark;
 }
 
 element normal.normal {
     padding: 15px;
-    background-color: #1e1e2e;
-    text-color: #cdd6f4;
+    background-color: @bg-col;
+    text-color: @fg-col;
 }
 
 element alternate.normal {
     padding: 15px;
-    background-color: #181825;
-    text-color: #cdd6f4;
+    background-color: @bg-col;
+    text-color: @fg-col;
 }
 
 element selected {
-    background-color: #cba6f7;
-    text-color: #11111b;
+    background-color: @main-col;
+    text-color: @bg-col-dark;
 }
+
 element-text {
     padding: 15px;
     background-color: transparent;
-    text-color:       inherit;
+    text-color:        inherit;
 }
 
 element-icon {
     padding: 5px;
     background-color: transparent;
-    text-color:       inherit;
+    text-color:        inherit;
     size: 2.5ch;
 }
+
 mode-switcher {
     spacing: 0;
     margin: 5px 10px;
@@ -101,14 +101,14 @@ mode-switcher {
 
 button {
     padding: 10px;
-    background-color: #1e1e2e;
-    text-color: #cdd6f4;
+    background-color: @bg-col;
+    text-color: @fg-col;
     vertical-align: 0.5; 
     horizontal-align: 0.5;
 }
 
 button selected {
-  background-color: #cba6f7;
-  text-color: #11111b;
-  border-radius: 5px;
+    background-color: @main-col;
+    text-color: @bg-col-dark;
+    border-radius: 5px;
 }

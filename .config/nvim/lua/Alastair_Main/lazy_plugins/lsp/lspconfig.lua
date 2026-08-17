@@ -181,5 +181,12 @@ return {
         vim.lsp.enable("pyright")
         vim.lsp.enable("qmlls")
         vim.lsp.enable("rust-analyzer")
+
+        -- 👇 New Configuration, Data, and Script File LSPs
+        vim.lsp.enable("taplo")    -- TOML
+        vim.lsp.enable("yamlls")   -- YAML
+        vim.lsp.enable("jsonls")   -- JSON
+        vim.lsp.enable("marksman") -- Markdown
+        vim.lsp.enable("bashls")   -- Bash/Shell scripts
     end,
 }

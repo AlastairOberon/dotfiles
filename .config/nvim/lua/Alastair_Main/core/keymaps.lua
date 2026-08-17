@@ -4,6 +4,9 @@ local opts = { noremap = true, silent = true }
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Toggle Word Wrap
+vim.keymap.set('n', '<leader>w', ':set wrap!<CR>', { desc = 'Toggle Word Wrap' })
+
 --Shifting selection (Up = K, Down = J, Left = <, Right = >)
 vim.keymap.set ("v", "J", ":m '>+1<CR>gv=gv", {desc = "Moves lines down in visual selection" })
 vim.keymap.set ("v", "K", ":m '<-2<CR>gv=gv", {desc = "Moves lines up in visual selection" })
@@ -28,6 +31,7 @@ vim.keymap.set ("n", "<leader>f", vim.lsp.buf.format)
 vim.keymap.set ("n", "Q", "<nop>")
 --Prevents deleted characters from being copied to the clipboard
 vim.keymap.set ("n", "x", '"_x', opts)
+
 
 --Search and replace, global
 vim.keymap.set ("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {desc= "Replace the word the cursor is on globally" })

@@ -1,8 +1,23 @@
 local set = vim.opt_local
 
-set.textwidth = 80   -- move text to new line at 80 characters
-set.spell = true     -- Enable spell checking
+-- Soft wrapping instead of hard wrapping
+set.wrap = true
 set.linebreak = true
+-- set.textwidth = 80 (Removed: see explanation below)
+
+-- Spellcheck
+set.spell = true
+set.spelllang = "en_us"
+
+-- Hide markdown characters for render-markdown.nvim
+set.conceallevel = 2
+
+-- Move by visual line instead of paragraph (Crucial for wrapped text)
+local opts = { buffer = true, silent = true }
+vim.keymap.set('n', 'j', 'gj', opts)
+vim.keymap.set('n', 'k', 'gk', opts)
+vim.keymap.set('n', '<Down>', 'gj', opts)
+vim.keymap.set('n', '<Up>', 'gk', opts)
 
 -- Toggle Line Numbers (Visual Selection)
 function ToggleNumberVisualSelection()
